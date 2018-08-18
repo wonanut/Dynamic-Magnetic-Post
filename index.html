@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dynamic Magnetic Post</title>
+	<style type="text/css">
+		*{padding: 0px; margin: 0px;}
+		body{width: 100%; height: 100%}
+		#info{background-color: #f2f2f2;}
+		#update{background-color: #66CC66;}
+		#update:hover{cursor: pointer;}
+		#navbar{height: 100px; padding-right: 60px;}
+		#navbar-ul{padding-top: 40px;}
+		#navbar-title{color: #66CC66; padding-right: 20px; font-weight: bold;}
+		#navbar-setting{color: #66CC66; border-radius: 5px;}
+		#navbar-setting:hover{cursor: pointer; color: #CCFF99; transition: 0.5s;}
+		li{list-style: none; float: right; padding-left: 30px;}
+		#warning-div{width: 60%; height: 30px; background-color: #66CC66; border-radius: 3px; position: absolute; left: 20%; bottom: 40px; transform: rotateX(90deg);}    
+		#warning-div-p{text-align: center; color: #fff; padding-top: 3px;}
+		#setting-div{background-color: #66CC66; height: 60px; width: 340px; position: absolute; left: -340px; top: 20px;}
+		#setting-div-inner{padding-top: 15px; padding-left: 40px;}
+		#blockWidthInp{background-color: #fff; border-radius: 3px; border: none; font-size: 14px; width: 140px; height: 30px; padding-left: 10px;}
+		#setBlockWidthBtn{background-color: #66CC66; border-radius: 3px; border: 1px #fff solid; color: #fff; font-size: 14px; width: 80px; height: 30px;}
+		#setBlockWidthBtn:hover{background-color: #fff; color:#66CC66; cursor: pointer; transition: 0.5s;}
+		#closeSettingDivBtn{border: none; background-color: #66CC66; color: #fff; cursor: pointer; position: absolute; right: 20px; top: 20px; font-size: 16px;}
+		#menu{width: 0; height: 90x; overflow: hidden; box-shadow: 0 1px 1px #888,1px 0 1px #ccc;position: absolute; background-color: white}
+		.menu{width: 180px; height: 30px; line-height: 30px; padding: 0 10px;}
+		.menu:hover{background-color: #efefef; cursor: pointer;}
+
+	</style>
+	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+</head>
+<body onload="_init_canvas()">
+	<div id="navbar">
+		<ul id="navbar-ul">
+			<li id="navbar-setting">SETTING</li>
+			<li id="navbar-title">DYNAMIC MAGNETIC POST DEMO</li>
+		</ul>
+	</div>
+
+	<center>
+		<canvas id="can" width="1200"; height="400">This Browser does not support Canvas, sorry.</canvas>
+		<canvas id="info" width="1098"; height="40">This Browser does not support Canvas, sorry.</canvas>
+		<canvas id="update" width="98"; height="40" onclick="clk_update()">This Browser does not support Canvas, sorry.</canvas>
+	</center>
+
+	<!--自定义setting div html代码-->
+	<div id="setting-div">
+		<div id="setting-div-inner">
+			<input id="blockWidthInp" type="text" name="blockWidth" placeholder="SET BLOCK WIDTH">
+			<input id="setBlockWidthBtn" type="button" name="setBlockWidthBtn" value="SET">
+			<input id="closeSettingDivBtn" type="button" name="closeSettingDivBtn" value="x">
+		</div>
+	</div>
+
+	<!--自定义右键菜单html代码-->
+	<div id="menu">
+		<div class="menu" id="cb1">create block 1</div>
+		<div class="menu" id="cb2">create block 2</div>
+		<div class="menu" id="cb3">create block 4</div>
+		<div class="menu" id="db">delete block</div>
+	</div>
+
+	<div id="warning-div">
+		<p id="warning-div-p">Howard Wonanut</p>
+	</div>
+
+	<script type="text/javascript" src="js/default.js"></script>
+</body>
+</html>
